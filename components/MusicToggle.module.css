@@ -1,0 +1,67 @@
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--marigold-200);
+  transition: background 0.2s ease, border-color 0.2s ease;
+  position: relative;
+}
+
+.toggle:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.65);
+}
+
+.bars {
+  display: none;
+}
+
+@media (min-width: 720px) {
+  .toggle {
+    width: auto;
+    padding: 9px 14px;
+  }
+
+  .bars {
+    display: inline-flex;
+    align-items: flex-end;
+    gap: 2px;
+    height: 14px;
+  }
+
+  .bars span {
+    width: 3px;
+    height: 4px;
+    background: currentColor;
+    border-radius: 2px;
+    opacity: 0.5;
+  }
+
+  .barAnim {
+    animation: bounce 0.9s ease-in-out infinite;
+    opacity: 1;
+  }
+
+  .bars span:nth-child(2).barAnim {
+    animation-delay: 0.15s;
+  }
+
+  .bars span:nth-child(3).barAnim {
+    animation-delay: 0.3s;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    height: 4px;
+  }
+  50% {
+    height: 14px;
+  }
+}

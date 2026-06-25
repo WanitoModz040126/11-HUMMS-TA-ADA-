@@ -1,0 +1,138 @@
+.hero {
+  position: relative;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--plum-900);
+}
+
+.slideStage {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.9s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    rgba(43, 21, 51, 0.92) 0%,
+    rgba(61, 31, 71, 0.82) 45%,
+    rgba(31, 111, 92, 0.55) 100%
+  );
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+  padding: 110px 24px 90px;
+  width: 100%;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 640px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--plum-900);
+  background: var(--marigold-500);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+}
+
+.title {
+  font-size: clamp(36px, 5.5vw, 64px);
+  color: var(--paper-50);
+  font-weight: 700;
+}
+
+.section {
+  display: block;
+  font-size: 0.5em;
+  color: var(--marigold-200);
+  letter-spacing: 0.04em;
+  margin-top: 6px;
+}
+
+.motto {
+  color: rgba(255, 250, 242, 0.88);
+  font-size: 18px;
+  font-style: italic;
+  max-width: 480px;
+}
+
+.ctaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.badgeSlot {
+  flex-shrink: 0;
+  display: none;
+}
+
+.dots {
+  position: absolute;
+  bottom: 26px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  border: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.dotActive {
+  background: var(--marigold-500);
+  transform: scale(1.25);
+}
+
+@media (min-width: 860px) {
+  .badgeSlot {
+    display: block;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    min-height: 520px;
+  }
+  .content {
+    padding: 90px 20px 70px;
+  }
+}

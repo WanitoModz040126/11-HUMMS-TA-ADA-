@@ -1,0 +1,45 @@
+.wrap {
+  width: 220px;
+  filter: drop-shadow(0 16px 24px rgba(43, 21, 51, 0.28));
+  animation: float 5s ease-in-out infinite;
+}
+
+.sm {
+  width: 110px;
+  animation: none;
+}
+
+.svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.line1 {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+  fill: var(--plum-900);
+}
+
+.line2 {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  fill: var(--plum-700);
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(3deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wrap {
+    animation: none;
+  }
+}

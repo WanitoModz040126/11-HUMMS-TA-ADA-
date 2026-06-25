@@ -1,0 +1,141 @@
+.tile {
+  position: relative;
+  border: var(--stroke-soft);
+  padding: 0;
+  text-align: left;
+  background: var(--ink-100);
+  overflow: hidden;
+}
+
+.imageWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: var(--plum-100);
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.tile:hover .image {
+  transform: scale(1.05);
+}
+
+.videoTile {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(135deg, var(--plum-700), var(--plum-500));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--paper-50);
+}
+
+.playBtn {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: var(--coral-500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--elev-2);
+  transition: transform 0.2s ease;
+}
+
+.tile:hover .playBtn {
+  transform: scale(1.1);
+}
+
+.videoLabel {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.caption {
+  display: block;
+  padding: 12px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--plum-700);
+}
+
+/* Lightbox */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(27, 24, 30, 0.82);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  animation: fadeIn 0.25s ease;
+}
+
+.modal {
+  position: relative;
+  background: var(--ink-100);
+  border-radius: var(--radius-lg);
+  max-width: 880px;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: var(--elev-3);
+}
+
+.closeBtn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(27, 24, 30, 0.6);
+  color: #fff;
+  border: none;
+  font-size: 22px;
+  line-height: 1;
+  z-index: 5;
+}
+
+.modalImageWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: var(--plum-900);
+}
+
+.modalImage {
+  object-fit: contain;
+}
+
+.modalVideo {
+  width: 100%;
+  display: block;
+  max-height: 70vh;
+  background: #000;
+}
+
+.modalCaption {
+  padding: 14px 18px;
+  font-weight: 600;
+  color: var(--plum-700);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

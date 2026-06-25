@@ -1,0 +1,111 @@
+.statRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.statCard {
+  padding: 30px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border-top: 5px solid var(--marigold-500);
+}
+
+.statCard:nth-child(2) {
+  border-top-color: var(--coral-500);
+}
+
+.statCard:nth-child(3) {
+  border-top-color: var(--teal-500);
+}
+
+.statValue {
+  font-family: var(--font-display);
+  font-size: 44px;
+  font-weight: 700;
+  color: var(--plum-700);
+}
+
+.statLabel {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-400);
+}
+
+.adviserCard {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 30px;
+}
+
+.adviserPhoto {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 4px solid var(--marigold-200);
+}
+
+.adviserPhoto img {
+  object-fit: cover;
+}
+
+.adviserCopy {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.adviserName {
+  font-size: 26px;
+}
+
+.adviserRole {
+  color: var(--ink-700);
+  max-width: 560px;
+}
+
+.exploreGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.exploreCard {
+  padding: 30px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.exploreEmoji {
+  font-size: 32px;
+}
+
+.exploreCard h3 {
+  font-size: 20px;
+}
+
+.exploreCard p {
+  color: var(--ink-700);
+  font-size: 14.5px;
+}
+
+@media (max-width: 760px) {
+  .statRow,
+  .exploreGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .adviserCard {
+    flex-direction: column;
+    text-align: center;
+  }
+}
